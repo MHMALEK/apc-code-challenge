@@ -1,1 +1,2 @@
-export default {};
+const date = {};
+export default date;

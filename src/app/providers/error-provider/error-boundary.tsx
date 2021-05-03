@@ -1,7 +1,7 @@
-import React from "react";
-import errorController from ".";
-import ErrorMessages from "./error-messages";
-import { ErrorBoundaryProps, ErrorBoundaryState } from "./types";
+import React from 'react';
+import errorController from '.';
+import ErrorMessages from './error-messages';
+import { ErrorBoundaryProps, ErrorBoundaryState } from './types';
 
 class ErrorBoundary extends React.Component<
   ErrorBoundaryProps,
@@ -13,7 +13,7 @@ class ErrorBoundary extends React.Component<
   }
 
   static getDerivedStateFromError(error: any) {
-    return { hasError: true, message: error.message || "" };
+    return { hasError: true, message: error.message || '' };
   }
 
   componentDidCatch() {

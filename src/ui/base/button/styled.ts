@@ -1,25 +1,25 @@
-import styled from "styled-components";
-import { ApcThemeType } from "../../../providers/theme-provider/styled-components";
-import { BUTTON_SIZES, BUTTON_VARIANTS, StyledButtonProps } from "./types";
+import styled from 'styled-components';
+import { ApcThemeType } from '../../../app/providers/theme-provider/styled-components';
+import { ButtonVariants, ButtonSizes, StyledButtonProps } from './types';
 
 const generateThemeBasedOnVariant = (
-  variant: BUTTON_VARIANTS | "DISABLED",
-  theme: ApcThemeType
+  variant: ButtonVariants | 'DISABLED',
+  theme: ApcThemeType,
 ) => {
-  if (variant === BUTTON_VARIANTS.PRIMARY) {
+  if (variant === ButtonVariants.PRIMARY) {
     return `
     background-color: ${theme.colors.primary.main};
     color: ${theme.colors.white.main};
     `;
   }
-  if (variant === BUTTON_VARIANTS.SECONDARY) {
+  if (variant === ButtonVariants.SECONDARY) {
     return `
     background-color: ${theme.colors.secondary.main};
     color: ${theme.colors.primary.main};
     border: 1px solid ${theme.colors.secondary.light};
     `;
   }
-  if (variant === "DISABLED") {
+  if (variant === 'DISABLED') {
     return `
     background-color: ${theme.colors.gray.main};
     color: ${theme.colors.white.main};
@@ -27,6 +27,7 @@ const generateThemeBasedOnVariant = (
     cursor: not-allowed;
     `;
   }
+  return ``;
 };
 
 const BaseStyles = styled.button`
@@ -44,13 +45,13 @@ const StyledButton = styled(BaseStyles)<StyledButtonProps>`
     size ? theme.dimensions[size] : theme.dimensions.normal};
   line-height: ${({ theme, size }) =>
     size ? theme.dimensions[size] : theme.dimensions.normal};
-  width: ${({ width }) => width || BUTTON_SIZES.FULL};
+  width: ${({ width }) => width || ButtonSizes.FULL};
   border-radius: ${({ theme }) => theme.dimensions.xs};
 
   ${({ variant, theme }) =>
     variant && generateThemeBasedOnVariant(variant, theme)};
   ${({ disabled, theme }) =>
-    disabled && generateThemeBasedOnVariant("DISABLED", theme)}
+    disabled && generateThemeBasedOnVariant('DISABLED', theme)}
 `;
 
 const StyledTextWrapper = styled.div`
@@ -73,5 +74,3 @@ export {
   StyledLoadingWrapper,
   StyledIconWrapper,
 };
-
-export default StyledButton;

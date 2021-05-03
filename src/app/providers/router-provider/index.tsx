@@ -1,15 +1,14 @@
-import React from "react";
-import { Router, Switch, Route } from "react-router-dom";
-import routes from "./routes";
-import { createBrowserHistory } from "history";
-import { RouterProviderProps } from "./model";
+import React from 'react';
+import { Router, Switch, Route } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+import routes from './routes';
+import { RouterProviderProps } from './model';
 
 const BrowserHistory = createBrowserHistory();
 
 const RouterProvider: React.FunctionComponent<RouterProviderProps> = ({
   children,
-}) => {
-  return (
+}) => (
     <>
       <Router history={BrowserHistory}>
         <Switch>
@@ -23,6 +22,5 @@ const RouterProvider: React.FunctionComponent<RouterProviderProps> = ({
       </Router>
     </>
   );
-};
 export { BrowserHistory };
 export default RouterProvider;

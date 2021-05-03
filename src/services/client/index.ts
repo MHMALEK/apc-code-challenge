@@ -1,4 +1,4 @@
-import HttpClient from 'Utils/http-client';
+import HttpClient from '../../utils/http-client';
 
 /**
  * http client that interacts with

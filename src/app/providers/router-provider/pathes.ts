@@ -1,10 +1,10 @@
-enum pathes {
+enum Pathes {
   // index
-  INDEX_PATH = "/",
+  INDEX_PATH = '/',
   // general
-  SEARCH_ROOM_PATH = "/search/:roomData",
+  SEARCH_ROOM_PATH = '/search/:roomData',
   // not found
-  NOT_FOUND_PATH = "*",
+  NOT_FOUND_PATH = '*',
 }
 
-export default pathes;
+export default Pathes;

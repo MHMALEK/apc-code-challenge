@@ -9,7 +9,7 @@ export enum HttpMethod {
 }
 
 class HttpClient {
-  private _baseUrl: string;
+  private _baseUrl: string | undefined;
 
   private CancelToken!: Axios.CancelTokenStatic;
 
@@ -18,7 +18,7 @@ class HttpClient {
   /**
    * Create a new Http Client
    */
-  constructor(baseUrl: string) {
+  constructor(baseUrl: string | undefined) {
     this._baseUrl = baseUrl;
     this.createCancelToken();
     this.createCancelToken = this.createCancelToken.bind(this);

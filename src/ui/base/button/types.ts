@@ -1,28 +1,28 @@
-export enum BUTTON_VARIANTS {
-  PRIMARY = "PRIMARY",
-  SECONDARY = "SECONDARY",
+export enum ButtonVariants {
+  PRIMARY = 'PRIMARY',
+  SECONDARY = 'SECONDARY',
 }
 
-export enum BUTTON_SIZES {
-  FULL = "100%",
-  AUTO = "auto",
+export enum ButtonSizes {
+  FULL = '100%',
+  AUTO = 'auto',
 }
 
 export interface StyledButtonProps {
-  size?: BUTTON_SIZES | string | undefined;
-  width?: BUTTON_SIZES | string;
-  variant?: BUTTON_VARIANTS;
+  size?: ButtonSizes | string | undefined;
+  width?: ButtonSizes | string;
+  variant?: ButtonVariants;
   disabled?: boolean;
 }
 
 export interface BaseButtonProps {
-  type?: "reset" | "submit";
+  type?: 'reset' | 'submit';
   icon?: React.ReactNode;
   children: React.ReactNode;
-  variant?: BUTTON_VARIANTS;
+  variant?: ButtonVariants;
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
-  width?: BUTTON_SIZES | string;
-  size?: BUTTON_SIZES;
+  width?: ButtonSizes | string;
+  size?: ButtonSizes;
   isLoading?: boolean;
 }

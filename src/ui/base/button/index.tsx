@@ -1,11 +1,12 @@
-import StyledButton, {
+import {
   StyledIconWrapper,
   StyledLoadingWrapper,
   StyledTextWrapper,
-} from "./styled";
+  StyledButton,
+} from './styled';
 
-import BaseLoading from "../loading";
-import { BaseButtonProps } from "./types";
+import BaseLoading from '../loading';
+import { BaseButtonProps } from './types';
 
 const BaseButton: React.FunctionComponent<BaseButtonProps> = ({
   type,

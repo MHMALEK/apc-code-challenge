@@ -3,7 +3,7 @@ export interface IconStyleProps {
   color?: string;
   rotate?: string;
   onClick?: () => void;
-  animation?: "spin";
+  animation?: 'spin';
 }
 
 export interface IconProps extends IconStyleProps {

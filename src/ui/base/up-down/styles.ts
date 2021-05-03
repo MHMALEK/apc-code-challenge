@@ -1,5 +1,5 @@
-import {  mediaQueriesMinWidth } from "providers/theme-provider/themes/find-hotel-default/responsive";
-import styled from "styled-components";
+import { mediaQueriesMinWidth } from 'providers/theme-provider/themes/find-hotel-default/responsive';
+import styled from 'styled-components';
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -23,7 +23,7 @@ const StyledIncreaseDecreaseWrapper = styled.div`
 `;
 const StyledValueWrapper = styled.div`
   padding: 0 ${({ theme }) => theme.dimensions.lg};
-  font-weight: bold;  
+  font-weight: bold;
 `;
 
 export { StyledWrapper, StyledIncreaseDecreaseWrapper, StyledValueWrapper };

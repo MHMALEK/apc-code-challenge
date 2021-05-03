@@ -5,12 +5,11 @@ import apcDefaultTheme from './themes/apc-default';
 import GlobalDefaultStyles from './defaults';
 
 // transitions
-import '../../styles/transition.css';
+import './styles/transition.css';
 
 const ThemeProvider: React.FunctionComponent<ThemeProviderProps> = ({
   children,
-}) => {
-  return (
+}) => (
     <>
       <StyledComponentThemeProvider theme={apcDefaultTheme}>
         <GlobalDefaultStyles />
@@ -18,6 +17,5 @@ const ThemeProvider: React.FunctionComponent<ThemeProviderProps> = ({
       </StyledComponentThemeProvider>
     </>
   );
-};
 
 export default ThemeProvider;

@@ -1,4 +1,4 @@
-import StyledSeperator from "./styles";
+import StyledSeperator from './styles';
 
 const BaseSeperator = () => <StyledSeperator />;
 

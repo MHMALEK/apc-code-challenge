@@ -6,4 +6,6 @@ function* bootstrapAppSaga(action: any) {
   yield action;
 }
 
-export default [takeEvery(ActionType.SAMPLE_ACTION, bootstrapAppSaga)];
+const Sagas = [takeEvery(ActionType.SAMPLE_ACTION, bootstrapAppSaga)];
+
+export default Sagas;

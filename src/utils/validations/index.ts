@@ -11,6 +11,4 @@ export const isMobilePhoneValid = (value: string) =>
 
 export const isEmailValid = (value: string) => emailRegExp.test(value);
 
-export const isMinLengthValid = (value: string, length: number) => {
-  return RegExp(`^.{${length},}$`).test(value);
-};
+export const isMinLengthValid = (value: string, length: number) => RegExp(`^.{${length},}$`).test(value);

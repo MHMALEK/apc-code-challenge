@@ -1,6 +1,7 @@
-import StyledIcon from "./style";
-import "./assets/embed.css";
-import { IconProps } from "./types";
+import StyledIcon from './style';
+import './assets/embed.css';
+import { IconProps } from './types';
+
 const BaseIcon: React.FunctionComponent<IconProps> = ({
   name,
   size,

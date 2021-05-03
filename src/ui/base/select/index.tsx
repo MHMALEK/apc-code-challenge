@@ -1,32 +1,30 @@
-import React from "react";
-import Select from "react-select";
-import { BaseSelectProps } from "./types";
+import React from 'react';
+import Select from 'react-select';
+import { BaseSelectProps } from './types';
 
 const colourStyles = {
   control: (styles: any) => ({
     ...styles,
-    fontWeight: "bold",
-    borderColor: "#BED2E9",
+    fontWeight: 'bold',
+    borderColor: '#BED2E9',
   }),
   container: (styles: any) => ({
     ...styles,
-    width: "100%",
+    width: '100%',
   }),
   indicatorSeparator: () => ({
-    display: "none",
+    display: 'none',
   }),
   dropdownIndicator: (styles: any) => ({
     ...styles,
-    color: "#0077FF",
+    color: '#0077FF',
   }),
-  option: (styles: any) => {
-    return {
+  option: (styles: any) => ({
       ...styles,
-      ":active": {
-        color: "white",
+      ':active': {
+        color: 'white',
       },
-    };
-  },
+    }),
 };
 
 const BaseSelect: React.FunctionComponent<BaseSelectProps> = ({

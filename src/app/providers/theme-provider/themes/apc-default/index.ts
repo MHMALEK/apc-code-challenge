@@ -1,7 +1,4 @@
-import {
-  mediaQueriesMaxWidth,
-  mediaQueriesMinWidth,
-} from './responsive';
+import { mediaQueriesMaxWidth, mediaQueriesMinWidth } from './responsive';
 
 const apcDefaultTheme = {
   colors: {

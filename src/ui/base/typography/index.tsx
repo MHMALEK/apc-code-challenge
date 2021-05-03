@@ -1,6 +1,7 @@
-import BaseTypographyProps, { ElementTypes, FontWeightTypes } from "./types";
-import createStyledTypographyTag from "./style";
-import { DimensionsType } from "providers/theme-provider/styled-components.d";
+import { DimensionsType } from 'providers/theme-provider/styled-components.d';
+import BaseTypographyProps, { ElementTypes, FontWeightTypes } from './types';
+import createStyledTypographyTag from './style';
+
 const BaseTypography: React.FunctionComponent<BaseTypographyProps> = ({
   variant,
   size,
@@ -10,7 +11,7 @@ const BaseTypography: React.FunctionComponent<BaseTypographyProps> = ({
   const CustomTag = createStyledTypographyTag(
     variant,
     size,
-    weight
+    weight,
   ) as keyof JSX.IntrinsicElements;
   return <CustomTag>{children}</CustomTag>;
 };

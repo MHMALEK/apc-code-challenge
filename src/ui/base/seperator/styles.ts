@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const StyledSeperator = styled.div`
   background-color: ${({ theme }) => theme.colors.gray.light};
