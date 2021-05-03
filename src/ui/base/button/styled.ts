@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { FindHotelThemeType } from "../../../providers/theme-provider/styled-components";
+import { ApcThemeType } from "../../../providers/theme-provider/styled-components";
 import { BUTTON_SIZES, BUTTON_VARIANTS, StyledButtonProps } from "./types";
 
 const generateThemeBasedOnVariant = (
   variant: BUTTON_VARIANTS | "DISABLED",
-  theme: FindHotelThemeType
+  theme: ApcThemeType
 ) => {
   if (variant === BUTTON_VARIANTS.PRIMARY) {
     return `

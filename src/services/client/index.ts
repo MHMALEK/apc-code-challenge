@@ -1,9 +1,8 @@
-import { HttpClient } from 'utils/http-client';
+import HttpClient from 'Utils/http-client';
 
 /**
- * Snapp client that interacts with base Snapp APIs
+ * http client that interacts with
  */
-const SnappClient = new HttpClient(process.env.BASE_API_URL);
-const SmappClient = new HttpClient(process.env.SMAPP_API_URL);
+const SampleClient = new HttpClient(process.env.BASE_API_URL);
 
-export { SnappClient, SmappClient };
+export default SampleClient;

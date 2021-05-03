@@ -1,15 +1,9 @@
 import { takeEvery } from 'redux-saga/effects';
-import { ActionType } from './action-type';
-import { AppActionType } from './action';
+import { ActionType } from './types';
 
-function* bootstrapAppSaga(action: AppActionType) {
+function* bootstrapAppSaga(action: any) {
   // add some actions for start of the app
   yield action;
 }
 
-export default [
-  takeEvery(
-    ActionType.BOOTSRAP_APP_ACTION,
-    bootstrapAppSaga,
-  ),
-];
+export default [takeEvery(ActionType.SAMPLE_ACTION, bootstrapAppSaga)];

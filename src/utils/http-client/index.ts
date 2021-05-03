@@ -8,12 +8,12 @@ export enum HttpMethod {
   DELETE = 'DELETE',
 }
 
-export class HttpClient {
+class HttpClient {
   private _baseUrl: string;
 
-  private CancelToken: Axios.CancelTokenStatic;
+  private CancelToken!: Axios.CancelTokenStatic;
 
-  private axiosSource: Axios.CancelTokenSource;
+  private axiosSource!: Axios.CancelTokenSource;
 
   /**
    * Create a new Http Client
@@ -69,3 +69,5 @@ export class HttpClient {
     });
   }
 }
+
+export default HttpClient;
