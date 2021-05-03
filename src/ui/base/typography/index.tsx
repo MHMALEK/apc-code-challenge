@@ -1,4 +1,4 @@
-import { DimensionsType } from 'providers/theme-provider/styled-components.d';
+import { DimensionsType } from '../../../app/providers/theme-provider/styled-components.d';
 import BaseTypographyProps, { ElementTypes, FontWeightTypes } from './types';
 import createStyledTypographyTag from './style';
 

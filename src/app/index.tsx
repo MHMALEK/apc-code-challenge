@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import RootProvider from './providers';
 
-const App: React.FunctionComponent<Record<string, never>> = () => {
-  useEffect(() => {}, []);
-  return <RootProvider />;
-};
+const App: React.FunctionComponent<Record<string, never>> = () => (
+  <RootProvider />
+);
 
 export default App;

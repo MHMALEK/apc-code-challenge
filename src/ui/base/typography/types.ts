@@ -1,5 +1,5 @@
-import { DimensionsType } from 'providers/theme-provider/styled-components';
 import React from 'react';
+import { DimensionsType } from '../../../app/providers/theme-provider/styled-components';
 
 export enum ElementTypes {
   h1 = 'h1',

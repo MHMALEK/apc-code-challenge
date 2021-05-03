@@ -1,5 +1,5 @@
-import { mediaQueriesMinWidth } from 'providers/theme-provider/themes/find-hotel-default/responsive';
 import styled from 'styled-components';
+import { mediaQueriesMinWidth } from '../../../app/providers/theme-provider/themes/apc-default/responsive';
 
 const StyledWrapper = styled.div`
   display: flex;
