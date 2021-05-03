@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   env: {
     browser: true,
     es6: true,
@@ -7,8 +7,8 @@ module.exports = {
     'airbnb-typescript',
     'plugin:@typescript-eslint/recommended',
     'prettier',
-    'airbnb-typescript-prettier',
-    'prettier/react',
+    'airbnb-base-typescript-prettier',
+    'prettier',
   ],
   globals: {
     Atomics: 'readonly',
@@ -19,7 +19,7 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 2018,
+    ecmaVersion: 2020,
     project: './tsconfig.json',
     tsconfigRootDir: '.',
     sourceType: 'module',
@@ -36,28 +36,5 @@ module.exports = {
     ],
     'no-underscore-dangle': ['error', { allowAfterThis: true }],
     'no-param-reassign': [2, { props: false }],
-    'jsx-a11y/no-static-element-interactions': 'off',
-    'jsx-a11y/no-noninteractive-element-interactions': 'off',
-    'jsx-a11y/click-events-have-key-events': 'off',
-    '@typescript-eslint/no-var-requires': 'off',
-    '@typescript-eslint/ban-ts-ignore': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
-    'import/no-extraneous-dependencies': 'off',
-    'import/extensions': 'off',
-    'import/no-cycle': 'off',
-    'react/jsx-props-no-spreading': 'off', //TODO
-    'react/no-array-index-key': 'off',
-    'react/jsx-filename-extension': [
-      1,
-      { extensions: ['.ts', '.tsx', '.scss', '.js'] },
-    ],
-  },
-  settings: {
-    'import/resolver': {
-      node: {
-        paths: ['src'],
-        extensions: ['.ts', '.tsx', '.scss', '.js'],
-      },
-    },
   },
 };
