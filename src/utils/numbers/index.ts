@@ -1,0 +1,3 @@
+const SeparateNumber = (x: string | number) =>
+  x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+export default SeparateNumber;
