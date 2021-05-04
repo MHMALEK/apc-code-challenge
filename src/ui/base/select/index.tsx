@@ -20,23 +20,25 @@ const colourStyles = {
     color: '#0077FF',
   }),
   option: (styles: any) => ({
-      ...styles,
-      ':active': {
-        color: 'white',
-      },
-    }),
+    ...styles,
+    ':active': {
+      color: 'white',
+    },
+  }),
 };
 
 const BaseSelect: React.FunctionComponent<BaseSelectProps> = ({
   options,
   onChange,
   defaultValue,
+  otherProps,
 }) => (
   <Select
     styles={colourStyles}
-    defaultValue={defaultValue || options[0]}
+    defaultValue={defaultValue || (options && options[0])}
     onChange={onChange}
     options={options}
+    {...otherProps}
   />
 );
 

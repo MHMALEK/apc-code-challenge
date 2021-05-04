@@ -3,7 +3,8 @@ export interface OptionItem {
   label: string;
 }
 export interface BaseSelectProps {
-  onChange: (selectedOption: OptionItem | null) => void;
+  onChange?: (selectedOption: OptionItem | null) => void;
   defaultValue?: OptionItem;
-  options: OptionItem[];
+  options?: OptionItem[];
+  [x: string]: any;
 }
