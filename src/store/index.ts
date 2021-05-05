@@ -1,21 +1,35 @@
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-import createSagaMiddleware from 'redux-saga';
-import SampleSlice from './modules/app';
-import sagas from './root-sagas';
+import {
+  createStore,
+  combineReducers,
+  Store,
+  compose,
+  applyMiddleware,
+} from 'redux';
 
-const sagaMiddleware = createSagaMiddleware();
+import mainReducer from './modules/main';
+import { MainInitStateType } from './modules/main/types';
+import { sagaMiddleware, sagas } from './root-sagas';
 
-const middleware = [...getDefaultMiddleware({ thunk: false }), sagaMiddleware];
+export interface State {
+  main: MainInitStateType;
+}
 
-const store = configureStore({
-  reducer: {
-    sample: SampleSlice.reducer,
-  },
-  middleware,
+const reducers = combineReducers({
+  main: mainReducer,
 });
+
+const store: Store = createStore(
+  reducers,
+  compose(
+    applyMiddleware(sagaMiddleware),
+    (window as any).__REDUX_DEVTOOLS_EXTENSION__
+      ? (window as any).__REDUX_DEVTOOLS_EXTENSION__()
+      : (noop: null) => noop,
+  ),
+);
+
 sagaMiddleware.run(sagas);
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
-
 export default store;

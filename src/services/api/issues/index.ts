@@ -20,7 +20,7 @@ export const fetchIssuesList: FetchIssuesListType = ({
   perPage,
   page,
   sort,
-  state,
+  issueState,
 }) =>
   GithubClient.request(
     `${HttpMethod.GET} /repos/${organization}/${repo}/issues`,
@@ -28,7 +28,7 @@ export const fetchIssuesList: FetchIssuesListType = ({
       per_page: perPage,
       page,
       sort,
-      state,
+      state: issueState,
     },
   );
 

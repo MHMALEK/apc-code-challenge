@@ -6,8 +6,8 @@ export enum SortTypes {
 
 export enum StateTypes {
   open = 'open',
-  updated = 'closed',
-  comments = 'all',
+  closed = 'closed',
+  all = 'all',
 }
 export interface FetchIssuesListPayloadType {
   organization: string;
@@ -15,6 +15,16 @@ export interface FetchIssuesListPayloadType {
   perPage: number;
   page?: number;
   sort?: SortTypes;
-  state?: StateTypes;
+  issueState?: StateTypes;
 }
+
 export type FetchIssuesListType = (payload: FetchIssuesListPayloadType) => void;
+
+export interface ResponseGenerator {
+  config?: any;
+  data?: any;
+  headers?: any;
+  request?: any;
+  status?: number;
+  statusText?: string;
+}

@@ -1,3 +1,4 @@
+// NOTE: just sample validation to prevent empty search
 const validateIssuesForm = (values: any) => {
   const errors: any = {};
   if (!values.repoName) {

@@ -22,4 +22,5 @@ const parseLinkHeader: any = (header: any) => {
   return links;
 };
 
+
 export default parseLinkHeader;

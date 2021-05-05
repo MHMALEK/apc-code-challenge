@@ -1,6 +1,11 @@
 import { all } from 'redux-saga/effects';
-import AppSaga from './modules/app/saga';
+import createSagaMiddleware from 'redux-saga';
+import MainSaga from './modules/main/saga';
 
-export default function* sagas() {
-  yield all([...AppSaga]);
+const sagaMiddleware = createSagaMiddleware();
+
+function* sagas() {
+  yield all([...MainSaga]);
 }
+
+export { sagaMiddleware, sagas };
