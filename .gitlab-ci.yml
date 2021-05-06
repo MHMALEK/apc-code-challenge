@@ -14,7 +14,7 @@ variables:
   CONTAINER_IMAGE: registry.gitlab.com/mhos.malek/apc-code-challenge
   BUILD_IMAGE: $CONTAINER_IMAGE:$CI_BUILD_REF_NAME
   HEROKU_REGISTORY: registry.heroku.com/apc-code-app/web
-  HEROKU_APP: gitlab-ci-demo-heroku
+  HEROKU_APP: apc-code-app
 
 build:
   stage: build
