@@ -1,6 +1,3 @@
-import React from 'react';
-import StyledImage from './styled';
-
-const NotFoundPage = () => <StyledImage alt='not found' />;
+const NotFoundPage = () => <div> Not Found</div>;
 
 export default NotFoundPage;

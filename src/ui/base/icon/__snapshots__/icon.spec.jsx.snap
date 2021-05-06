@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BaseIcon Componenent render it should match the SnappShot 1`] = `
+<Fragment>
+  <styled.span
+    className="icon-sample-name"
+  />
+</Fragment>
+`;

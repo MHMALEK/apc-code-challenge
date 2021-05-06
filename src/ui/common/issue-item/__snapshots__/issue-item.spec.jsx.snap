@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommonItem Componenent render it should match the SnappShot 1`] = `
+<div>
+  <a
+    href="https://google.com"
+  >
+    <p
+      className="user"
+    >
+      Malek
+    </p>
+    <p
+      className="created_at"
+    >
+      2013-08-03
+    </p>
+    <p
+      className="updated_at"
+    >
+      2013-08-03
+    </p>
+  </a>
+</div>
+`;

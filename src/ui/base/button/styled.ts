@@ -36,17 +36,12 @@ const BaseStyles = styled.button`
   justify-content: center;
   border: none;
   cursor: pointer;
-  padding: ${({ theme }) => theme.dimensions.normal};
   font-weight: bold;
 `;
 
 const StyledButton = styled(BaseStyles)<StyledButtonProps>`
-  font-size: ${({ theme, size }) =>
-    size ? theme.dimensions[size] : theme.dimensions.normal};
-  line-height: ${({ theme, size }) =>
-    size ? theme.dimensions[size] : theme.dimensions.normal};
+ 
   width: ${({ width }) => width || ButtonSizes.FULL};
-  border-radius: ${({ theme }) => theme.dimensions.xs};
 
   ${({ variant, theme }) =>
     variant && generateThemeBasedOnVariant(variant, theme)};
@@ -61,16 +56,8 @@ const StyledLoadingWrapper = styled.div`
   margin: 0 auto;
 `;
 
-const StyledIconWrapper = styled.div`
-  margin-right: ${({ theme }) => theme.dimensions.sm};
-  @media screen and ${({ theme }) => theme.mediaQueriesMaxWidth.tablet} {
-    display: none;
-  }
-`;
-
 export {
   StyledButton,
   StyledTextWrapper,
   StyledLoadingWrapper,
-  StyledIconWrapper,
 };

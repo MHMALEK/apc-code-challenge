@@ -3,22 +3,31 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@octokit/core": "^3.4.0",
     "@reduxjs/toolkit": "^1.5.1",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
+    "@types/enzyme": "^3.10.8",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "^26.0.23",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "@types/react-paginate": "^7.1.0",
     "@types/react-redux": "^7.1.7",
     "@types/react-select": "^4.0.15",
     "@types/styled-components": "^5.1.9",
+    "@types/xtend": "^4.0.3",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "axios": "^0.21.1",
     "babel-eslint": "^10.1.0",
     "browserslist": "^4.16.6",
+    "cypress": "^7.2.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "^3.6.2",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-base-typescript-prettier": "^4.1.0",
     "eslint-config-airbnb-typescript": "^12.3.1",
@@ -32,6 +41,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "formik": "^2.2.6",
     "history": "^5.0.0",
     "husky": "^6.0.0",
     "prettier": "^2.2.1",
@@ -39,6 +49,7 @@
     "prettier-eslint-cli": "^5.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-paginate": "^7.1.2",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
@@ -55,9 +66,7 @@
     "eslint:fix": "eslint --fix --ext .ts,.tsx .",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
     "format": "prettier --write 'src/**/*.{ts,tsx,scss,css,json}'",
-    "test:watch": "jest --watch",
-    "test:prod": "react-scripts test",
-    "test:dev": "jest --watch",
+    "test:unit": "react-scripts test",
     "test:e2e": "cypress open"
   },
   "eslintConfig": {
@@ -87,6 +96,20 @@
     ]
   },
   "devDependencies": {
-    "@types/react-router-dom": "^5.1.7"
+    "@types/react-router-dom": "^5.1.7",
+    "react-test-renderer": "^17.0.2",
+    "ts-jest": "^26.5.6"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/index.js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx|js|jsx)$": "ts-jest"
+    }
   }
 }

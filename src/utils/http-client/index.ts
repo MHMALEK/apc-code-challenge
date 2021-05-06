@@ -11,24 +11,11 @@ export enum HttpMethod {
 class HttpClient {
   private _baseUrl: string | undefined;
 
-  private CancelToken!: Axios.CancelTokenStatic;
-
-  private axiosSource!: Axios.CancelTokenSource;
-
   /**
    * Create a new Http Client
    */
   constructor(baseUrl: string | undefined) {
     this._baseUrl = baseUrl;
-    this.createCancelToken();
-    this.createCancelToken = this.createCancelToken.bind(this);
-    this.cancelAllRequests = this.cancelAllRequests.bind(this);
-  }
-
-  createCancelToken() {
-    // @ts-ignore
-    this.CancelToken = Axios.CancelToken;
-    this.axiosSource = this.CancelToken.source();
   }
 
   /**
@@ -36,11 +23,6 @@ class HttpClient {
    */
   public getBaseUrl() {
     return this._baseUrl;
-  }
-
-  public cancelAllRequests() {
-    this.axiosSource.cancel();
-    this.createCancelToken();
   }
 
   /**
@@ -58,7 +40,7 @@ class HttpClient {
   ): Promise<Axios.AxiosResponse> {
     return Axios.default.request({
       baseURL: this._baseUrl,
-      cancelToken: this.axiosSource.token,
+      // cancelToken: this.axiosSource.token,
       method,
       url,
       headers: {
