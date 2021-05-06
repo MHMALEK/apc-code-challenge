@@ -1,11 +1,9 @@
 import {
-  StyledIconWrapper,
   StyledLoadingWrapper,
   StyledTextWrapper,
   StyledButton,
 } from './styled';
 
-import BaseLoading from '../loading';
 import { BaseButtonProps } from './types';
 
 const BaseButton: React.FunctionComponent<BaseButtonProps> = ({
@@ -23,16 +21,8 @@ const BaseButton: React.FunctionComponent<BaseButtonProps> = ({
     if (isLoading) {
       return (
         <StyledLoadingWrapper>
-          <BaseLoading />
+          <p>Loading</p>
         </StyledLoadingWrapper>
-      );
-    }
-    if (icon) {
-      return (
-        <>
-          <StyledIconWrapper>{icon}</StyledIconWrapper>
-          <StyledTextWrapper>{children}</StyledTextWrapper>
-        </>
       );
     }
     return <StyledTextWrapper>{children}</StyledTextWrapper>;

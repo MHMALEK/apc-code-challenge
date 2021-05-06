@@ -48,7 +48,6 @@ const IndexPage: React.FunctionComponent<Record<string, never>> = () => {
     return issues.map((issueItem: CommonIssueItemPropsType) => (
       <CommonIssueItem
         key={issueItem.id}
-        body={issueItem.body}
         created_at={issueItem.created_at}
         updated_at={issueItem.updated_at}
         url={issueItem.url}
@@ -71,18 +70,20 @@ const IndexPage: React.FunctionComponent<Record<string, never>> = () => {
           <SearchIssuesForm onFormSubmit={handleFormSubmit} />
         </section>
         <section>{renderLoadingOrData()}</section>
-        <ReactPaginate
-          previousLabel='previous'
-          nextLabel='next'
-          breakLabel='...'
-          breakClassName='break-me'
-          pageCount={paginationData.total}
-          marginPagesDisplayed={2}
-          pageRangeDisplayed={5}
-          onPageChange={handlePageClick}
-          containerClassName='pagination'
-          activeClassName='active'
-        />
+        {!isPending && issues && (
+          <ReactPaginate
+            previousLabel='previous'
+            nextLabel='next'
+            breakLabel='...'
+            breakClassName='break-me'
+            pageCount={paginationData.total}
+            marginPagesDisplayed={2}
+            pageRangeDisplayed={5}
+            onPageChange={handlePageClick}
+            containerClassName='pagination'
+            activeClassName='active'
+          />
+        )}
       </main>
     </div>
   );

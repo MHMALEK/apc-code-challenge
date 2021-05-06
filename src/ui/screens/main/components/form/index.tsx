@@ -69,9 +69,6 @@ const SearchIssuesForm: React.FunctionComponent<SearchIssuesFormPropsType> = ({
             ))}
         </select>
 
-        {errors.organizationName &&
-          touched.organizationName &&
-          errors.organizationName}
         <BaseButton type='submit'>Show issues</BaseButton>
       </form>
     )}
