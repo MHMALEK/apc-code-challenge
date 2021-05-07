@@ -9,7 +9,8 @@ before_script:
 stages:
   - build
   - test
-  - deploy
+  - staging
+  - production
 
 variables:
   CONTAINER_IMAGE: registry.gitlab.com/mhos.malek/apc-code-challenge
