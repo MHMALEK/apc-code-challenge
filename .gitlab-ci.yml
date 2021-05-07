@@ -35,6 +35,8 @@ test:
     - echo "Testing App"
     - npm install
     - CI=true npm test:unit
+    - npm run start:ci &
+    - npm run e2e
     - echo "Test successfully!"
 
 
