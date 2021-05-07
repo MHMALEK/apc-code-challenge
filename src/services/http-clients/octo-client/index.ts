@@ -1,6 +1,6 @@
 import { Octokit } from '@octokit/core';
 
-const generateNewClient: (payload?: any) => Octokit = ({ githubToken }) => {
+const generateNewClient: (payload?: any) => Octokit = () => {
   const octokit = new Octokit();
   return octokit;
 };
