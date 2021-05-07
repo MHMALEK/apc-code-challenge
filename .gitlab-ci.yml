@@ -33,12 +33,13 @@ test:
   script:
     - echo "Testing App"
     - npm install
-    - CI=true npm test
+    - CI=true npm test:unit
     - echo "Test successfully!"
 
 
-deploy_staging:
-  stage: deploy
+staging:
+  type: deploy
+  stage: staging
   tags:
     - docker
   only:
@@ -52,8 +53,9 @@ deploy_staging:
     - docker run --rm -e HEROKU_API_KEY=$HEROKU_API_KEY wingrunr21/alpine-heroku-cli container:release web --app $HEROKU_APP
 
 # I don't have other account for prod. just for smaple I put it here
-deploy_production:
-  stage: deploy
+production:
+  type: deploy
+  stage: production
   tags:
     - docker
   only:

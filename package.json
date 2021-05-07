@@ -66,8 +66,10 @@
     "eslint:fix": "eslint --fix --ext .ts,.tsx .",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
     "format": "prettier --write 'src/**/*.{ts,tsx,scss,css,json}'",
-    "test:unit": "react-scripts test",
-    "test:e2e": "cypress open"
+    "test:unit:dev": "react-scripts test",
+    "test:unit": "react-scripts test --watchAll=false",
+    "test:e2e": "cypress open",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": "react-app"
