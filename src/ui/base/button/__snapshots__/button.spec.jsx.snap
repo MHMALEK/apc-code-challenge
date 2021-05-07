@@ -2,7 +2,7 @@
 
 exports[`BaseIcon Componenent render it should match the SnappShot 1`] = `
 <button
-  className="sc-bdvvaa sc-gsDJrp gsXtJr jiFftF"
+  className="sc-bdvvaa sc-gsDJrp fNeSdO jiFftF"
 >
   sample-name
 </button>

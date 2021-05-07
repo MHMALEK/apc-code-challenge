@@ -10,5 +10,37 @@ const StyledMainSection = styled.section`
 const StyledPageTitle = styled.div`
   margin: ${({ theme }) => theme.dimensions.normal} 0;
 `;
+const StyledPaginationWrapper = styled.div`
+  .pagination {
+    display: flex;
+    li {
+      list-style-type: none;
+      border-radius: 8px;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      margin: 16px;
+      justify-content: center;
+      cursor: pointer;
+      &.previous,
+      &.next {
+        width: auto;
+        padding: 2px 5px;
+        border: 1px solid ${({ theme }) => theme.colors.primary.main};
+        color: ${({ theme }) => theme.colors.primary.main};
+      }
+      &.active {
+        background-color: ${({ theme }) => theme.colors.primary.main};
+        color: white;
+      }
+    }
+  }
+`;
 
-export { StyledHeaderSection, StyledMainSection, StyledPageTitle };
+export {
+  StyledHeaderSection,
+  StyledMainSection,
+  StyledPageTitle,
+  StyledPaginationWrapper,
+};

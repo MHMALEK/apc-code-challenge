@@ -10,7 +10,12 @@ import {
 } from '../../../store/modules/main/action';
 
 // styles
-import { StyledHeaderSection, StyledMainSection,StyledPageTitle } from './styled';
+import {
+  StyledHeaderSection,
+  StyledMainSection,
+  StyledPageTitle,
+  StyledPaginationWrapper,
+} from './styled';
 
 // common components
 import { CommonIssueItemPropsType } from '../../common/issue-item/types';
@@ -68,24 +73,27 @@ const IndexPage: React.FunctionComponent<Record<string, never>> = () => {
       <main>
         <StyledHeaderSection>
           <StyledPageTitle>
-            Please enter the name of repo and organization (eg: microsoft, repo: vscode)
+            Please enter the name of repo and organization (eg: microsoft, repo:
+            vscode)
           </StyledPageTitle>
           <SearchIssuesForm onFormSubmit={handleFormSubmit} />
         </StyledHeaderSection>
         <StyledMainSection>{renderLoadingOrData()}</StyledMainSection>
         {!isPending && issues && (
-          <ReactPaginate
-            previousLabel='previous'
-            nextLabel='next'
-            breakLabel='...'
-            breakClassName='break-me'
-            pageCount={paginationData.total}
-            marginPagesDisplayed={2}
-            pageRangeDisplayed={5}
-            onPageChange={handlePageClick}
-            containerClassName='pagination'
-            activeClassName='active'
-          />
+          <StyledPaginationWrapper>
+            <ReactPaginate
+              previousLabel='previous'
+              nextLabel='next'
+              breakLabel='...'
+              breakClassName='break-me'
+              pageCount={paginationData.total}
+              marginPagesDisplayed={2}
+              pageRangeDisplayed={5}
+              onPageChange={handlePageClick}
+              containerClassName='pagination'
+              activeClassName='active'
+            />
+          </StyledPaginationWrapper>
         )}
       </main>
     </div>
