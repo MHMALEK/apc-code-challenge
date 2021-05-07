@@ -3,6 +3,7 @@
 exports[`CommonItem Componenent render it should match the SnappShot 1`] = `
 <div>
   <a
+    className="issue-item"
     href="https://google.com"
   >
     <p
