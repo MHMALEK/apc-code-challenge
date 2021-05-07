@@ -37,6 +37,8 @@ const BaseStyles = styled.button`
   border: none;
   cursor: pointer;
   font-weight: bold;
+  height: 38px;
+  border-radius: 4px;
 `;
 
 const StyledButton = styled(BaseStyles)<StyledButtonProps>`

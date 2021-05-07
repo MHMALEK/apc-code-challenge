@@ -7,11 +7,15 @@ import { Formik } from 'formik';
 import BaseInput from '../../../../base/base-input';
 import BaseButton from '../../../../base/button';
 
+// styles
+import { StyledButtonWrapper } from './styled';
+
 // form data
 import initialValues from './data/init-values';
 import perPageOptions from './data/perPageOptions';
 import validateIssuesForm from './validation';
 import { SearchIssuesFormPropsType } from './types';
+import { ButtonVariants } from '../../../../base/button/types';
 import { StateTypes } from '../../../../../services/api/issues/types';
 
 // this component handle search input and get data from user to search api
@@ -34,7 +38,7 @@ const SearchIssuesForm: React.FunctionComponent<SearchIssuesFormPropsType> = ({
           onChange={handleChange}
           onBlur={handleBlur}
           value={values.organizationName}
-          placeHolder="organization name"
+          placeHolder='organization name'
         />
 
         <BaseInput
@@ -43,7 +47,7 @@ const SearchIssuesForm: React.FunctionComponent<SearchIssuesFormPropsType> = ({
           onChange={handleChange}
           onBlur={handleBlur}
           value={values.repoName}
-          placeHolder="repository name"
+          placeHolder='repository name'
         />
         {errors.repoName && touched.repoName && errors.repoName}
 
@@ -70,8 +74,15 @@ const SearchIssuesForm: React.FunctionComponent<SearchIssuesFormPropsType> = ({
               </option>
             ))}
         </select>
-
-        <BaseButton type='submit'>Show issues</BaseButton>
+        <StyledButtonWrapper>
+          <BaseButton
+            width='305px'
+            type='submit'
+            variant={ButtonVariants.PRIMARY}
+          >
+            Show issues
+          </BaseButton>
+        </StyledButtonWrapper>
       </form>
     )}
   </Formik>

@@ -9,6 +9,9 @@ import {
   fetchIssuesListAction,
 } from '../../../store/modules/main/action';
 
+// styles
+import { StyledHeaderSection, StyledMainSection,StyledPageTitle } from './styled';
+
 // common components
 import { CommonIssueItemPropsType } from '../../common/issue-item/types';
 import CommonIssueItem from '../../common/issue-item';
@@ -63,13 +66,13 @@ const IndexPage: React.FunctionComponent<Record<string, never>> = () => {
   return (
     <div>
       <main>
-        <section>
-          <div className='top-details'>
-            Please enter the name of repo and organization
-          </div>
+        <StyledHeaderSection>
+          <StyledPageTitle>
+            Please enter the name of repo and organization (eg: microsoft, repo: vscode)
+          </StyledPageTitle>
           <SearchIssuesForm onFormSubmit={handleFormSubmit} />
-        </section>
-        <section>{renderLoadingOrData()}</section>
+        </StyledHeaderSection>
+        <StyledMainSection>{renderLoadingOrData()}</StyledMainSection>
         {!isPending && issues && (
           <ReactPaginate
             previousLabel='previous'
