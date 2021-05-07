@@ -8,7 +8,9 @@ const generateNewClient: (payload?: any) => Octokit = ({ githubToken }) => {
 };
 
 const GithubClient = generateNewClient({
-  githubToken: process.env.REACT_APP_SAMPLE_PERSONAL_TOKEN || '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',
+  // process.env.REACT_APP_SAMPLE_PERSONAL_TOKEN 
+  // TODO: it's not a production app so I just added token like this
+  githubToken: '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',
 });
 
 export default GithubClient;
