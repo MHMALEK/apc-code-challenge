@@ -49,7 +49,7 @@ const reducer = (
     case ActionType.CHANGE_PAGE_ISSUES_LIST:
       return {
         ...state,
-        isPending: false,
+        isPending: true,
       };
 
     default:

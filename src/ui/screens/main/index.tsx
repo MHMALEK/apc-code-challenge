@@ -78,7 +78,6 @@ const IndexPage: React.FunctionComponent<Record<string, never>> = () => {
           </StyledPageTitle>
           <SearchIssuesForm onFormSubmit={handleFormSubmit} />
         </StyledHeaderSection>
-        <StyledMainSection>{renderLoadingOrData()}</StyledMainSection>
         {!isPending && issues && (
           <StyledPaginationWrapper>
             <ReactPaginate
@@ -95,6 +94,7 @@ const IndexPage: React.FunctionComponent<Record<string, never>> = () => {
             />
           </StyledPaginationWrapper>
         )}
+        <StyledMainSection>{renderLoadingOrData()}</StyledMainSection>
       </main>
     </div>
   );

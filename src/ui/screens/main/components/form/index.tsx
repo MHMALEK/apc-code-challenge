@@ -3,12 +3,13 @@ import React from 'react';
 // dependencies
 import { Formik } from 'formik';
 
+
 // base components
 import BaseInput from '../../../../base/base-input';
 import BaseButton from '../../../../base/button';
 
 // styles
-import { StyledButtonWrapper } from './styled';
+import { StyledButtonWrapper, StyledForm } from './styled';
 
 // form data
 import initialValues from './data/init-values';
@@ -31,14 +32,14 @@ const SearchIssuesForm: React.FunctionComponent<SearchIssuesFormPropsType> = ({
     }}
   >
     {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
-      <form onSubmit={handleSubmit}>
+      <StyledForm onSubmit={handleSubmit}>
         <BaseInput
           type='text'
           name='organizationName'
           onChange={handleChange}
           onBlur={handleBlur}
           value={values.organizationName}
-          placeHolder='organization name'
+          placeholder='organization name'
         />
 
         <BaseInput
@@ -47,7 +48,7 @@ const SearchIssuesForm: React.FunctionComponent<SearchIssuesFormPropsType> = ({
           onChange={handleChange}
           onBlur={handleBlur}
           value={values.repoName}
-          placeHolder='repository name'
+          placeholder='repository name'
         />
         {errors.repoName && touched.repoName && errors.repoName}
 
@@ -83,7 +84,7 @@ const SearchIssuesForm: React.FunctionComponent<SearchIssuesFormPropsType> = ({
             Show issues
           </BaseButton>
         </StyledButtonWrapper>
-      </form>
+      </StyledForm>
     )}
   </Formik>
 );

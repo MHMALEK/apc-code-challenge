@@ -16,7 +16,7 @@ const StyledPaginationWrapper = styled.div`
     li {
       list-style-type: none;
       border-radius: 8px;
-      width: 20px;
+      width: 40px;
       height: 20px;
       display: flex;
       align-items: center;
@@ -33,6 +33,8 @@ const StyledPaginationWrapper = styled.div`
       &.active {
         background-color: ${({ theme }) => theme.colors.primary.main};
         color: white;
+        width: 20px;
+        height: 20px;
       }
     }
   }
