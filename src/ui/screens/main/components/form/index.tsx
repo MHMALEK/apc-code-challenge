@@ -34,6 +34,7 @@ const SearchIssuesForm: React.FunctionComponent<SearchIssuesFormPropsType> = ({
           onChange={handleChange}
           onBlur={handleBlur}
           value={values.organizationName}
+          placeHolder="organization name"
         />
 
         <BaseInput
@@ -42,6 +43,7 @@ const SearchIssuesForm: React.FunctionComponent<SearchIssuesFormPropsType> = ({
           onChange={handleChange}
           onBlur={handleBlur}
           value={values.repoName}
+          placeHolder="repository name"
         />
         {errors.repoName && touched.repoName && errors.repoName}
 
